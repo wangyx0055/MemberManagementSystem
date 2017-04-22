@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>丝华帝国</title>
+	<link rel="stylesheet" href="./Public/Home/css/style.css" type="text/css">
+	<link href="./Public/Home/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./Public/Home/css/signin.css" rel="stylesheet">
+	<script type="text/javascript" src="./Public/Home/js/homeIndex.js"></script>
+</head>
+<body>
+	<div id="header">
+		<div>
+			<div id="logo">
+				<a href="index.html"><img id="logoImg" src="./Public/Home/images/logo.png" alt="LOGO"></a>
+			</div>
+			<ul id="navigation">
+				<li class="selected">
+					<a href="index.html">主页</a>
+				</li>
+				<li>
+					<a href="about.html">产品</a>
+				</li>
+				<li>
+					<a href="contact.html">服务</a>
+				</li>
+				<li>
+					<p id="memberLogin">管理员登录</p>
+				</li>
+				<li>
+					<a href="adminLogin.html">会员登录</a>
+				</li>
+				<li>
+					<a href="contact.html">联系</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="signin" id="memberLoginFormSignIn">
+		<div class="signin-head" id="signin-head"><img id="loginImg" src="./Public/Home/images/test/timg1.jpg" alt="" class="img-circle"></div>
+		<form class="form-signin" method="post" id="form-signin" role="form" action="index.php?p=Home&c=Login&a=check">
+			<input name="username" type="text" class="form-control" placeholder="用户" required autofocus />
+			<input name="password" type="password" class="form-control" placeholder="密码" required />
+			<table>
+			<tr>
+				<td>
+					<input name="captcha" type="text" class="form-control" placeholder="验证码" required autofocus />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<img src="index.php?p=Home&c=Captcha&a=index" onclick="this.src='index.php?p=Home&c=Captcha&a=index&rand='+Math.random()" width="300px" height="30" title="看不清?点我换一个验证码" />
+				</td>
+			</tr>
+			</table>
+			<button class="btn btn-lg btn-warning btn-block" type="submit">登录</button>
+			<label class="checkbox">
+				<input name="remember" type="checkbox" value="remember"> 记住我
+			</label>
+		</form>
+		<i id="closeMemberLogoinForm">×</i>
+	</div>
+	<div id="contents">
+		<div id="adbox">
+			<div>
+				<img src="./Public/Home/images/beauty.png" alt="Img">
+				<div class="details">
+					<h3>We Bring out your beauty naturally...</h3>
+					<a href="index.html">Set An Appointment Now</a>
+				</div>
+			</div>
+			<span class="footer"></span>
+		</div>
+		<div id="featured">
+			<a href="index.html" class="all-colors"></a> <a href="index.html" class="highlights"></a> <a href="index.html" class="coloring"></a>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="articles">
+			<div class="header">
+				<div class="body">
+					<div>
+						<div class="section">
+							<h3>About us</h3>
+							<p>
+								This website template has been collect from for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you're free to use this website template without linking back to us. If you're having problems editing this website template, then don't hesitate to ask for help on the <a href="#">Forum</a>.
+							</p>
+						</div>
+						<div class="section">
+							<h3>Latest Blog Posts</h3>
+							<ul class="blog">
+								<li>
+									<p>
+										<span>Posted Feb. 21, 2023</span> <a href="blog.html">Choosing The Right Hair Color For You</a> Our website templates are created with inspiration, checked for quality and originality.
+									</p>
+								</li>
+								<li>
+									<p>
+										<span>Posted Feb. 20, 2023</span> <a href="blog.html">Color Trends For Spring 2023</a> What’s more, they’re absolutely free! You can do a lot with them. You can modify them.
+									</p>
+								</li>
+							</ul>
+						</div>
+						<div class="section">
+							<h3>Contact Information</h3>
+							<table class="info">
+								<tbody>
+									<tr>
+										<td>Address:</td>
+										<td>4982 Meadowview Drive Ashburn, VA 2014</td>
+									</tr> <tr>
+										<td>Phone:</td>
+										<td>540-754-4081</td>
+									</tr> <tr>
+										<td>Hours Open:</td>
+										<td>Tues- Sundays: 10 am- 9pm</td>
+									</tr>
+								</tbody>
+							</table>
+							<h3>Follow us</h3>
+							<div id="connect">
+								<a href="#" target="_blank" class="facebook"></a> <a href="#" target="_blank" class="twitter"></a> <a href="#" target="_blank" class="googleplus"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<form action="index.html" method="post">
+				<input type="text" value="Enter email address and get 10% off" class="txtfield" onMouseUp="return false;" onFocus="this.select();">
+				<input type="submit" value="SIGNUP" class="btn">
+			</form>
+			<p>
+				&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>
+			</p>
+		</div>
+	</div>
+<div style="display:none"><script src='://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>
