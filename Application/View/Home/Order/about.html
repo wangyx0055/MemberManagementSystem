@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>丝华帝国</title>
+	<link rel="stylesheet" href="./Public/Home/css/style.css" type="text/css">
+	<link href="./Public/Home/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./Public/Home/css/signin.css" rel="stylesheet">
+	<script type="text/javascript" src="./Public/Home/js/homeIndex.js"></script>
+	<link href="./Public/Home/css/index.css" rel="stylesheet" type="text/css">
+	<script src="./Public/Home/js/jquery.min.js"></script>
+</head>
+<body>
+<div id="header">
+	<div>
+		<div id="logo">
+			<a href="index.html"><img id="logoImg" src="./Public/Home/images/logo.png" alt="LOGO"></a>
+		</div>
+		<ul id="navigation">
+			<li >
+				<a href="index.php?p=Home&c=Index&a=index">主页</a>
+			</li>
+			<li >
+				<a href="index.php?p=Home&c=Service&a=services">积分商城</a>
+			</li>
+			<li class="selected">
+				<a href="index.php?p=Home&c=Order&a=about">会员专区</a>
+			</li>
+			<li>
+				<p id="memberLogin">管理员登录</p>
+			</li>
+			<li>
+				<p id="userLogin">会员登录</p>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+<div class="signin" id="memberLoginFormSignIn">
+	<div class="signin-head" id="signin-head"><img id="loginImg" src="./Public/Home/images/test/timg1.jpg" alt="" class="img-circle"></div>
+	<form class="form-signin" method="post" id="form-signin" role="form" action="index.php?p=Home&c=Login&a=check">
+		<input name="username" type="text" class="form-control" placeholder="用户" required autofocus />
+		<input name="password" type="password" class="form-control" placeholder="密码" required />
+		<table>
+			<tr>
+				<td>
+					<input name="captcha" type="text" class="form-control" placeholder="验证码" required autofocus />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<img src="index.php?p=Home&c=Captcha&a=index" onclick="this.src='index.php?p=Home&c=Captcha&a=index&rand='+Math.random()" width="300px" height="30" title="看不清?点我换一个验证码" />
+				</td>
+			</tr>
+		</table>
+		<button class="btn btn-lg btn-warning btn-block" type="submit">管理员登录</button>
+		<label class="checkbox">
+			<input name="remember" type="checkbox" value="remember-me"> 记住我
+		</label>
+	</form>
+	<i class="closeMemberLogoinForm" id="closeMemberLogoinForm">×</i>
+</div>
+<!--此处为会员登录框-->
+<div class="signin" id="userLoginFormSignIn">
+	<div class="signin-head"><img id="userloginImg" src="./Public/Home/images/test/timg1.jpg" alt="" class="img-circle"></div>
+	<form class="form-signin" method="post" name="users" id="form-usersignin" role="form" action="index.php?p=Home&c=Login&a=User_check">
+		<input name="username" type="text" class="form-control" placeholder="用户" required autofocus />
+		<input name="password" type="password" class="form-control" placeholder="密码" required />
+		<table>
+			<tr>
+				<td>
+					<input name="captcha" type="text" class="form-control" placeholder="验证码" required autofocus />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<img src="index.php?p=Home&c=Captcha&a=index" onclick="this.src='index.php?p=Home&c=Captcha&a=index&rand='+Math.random()" width="300px" height="30" title="看不清?点我换一个验证码" />
+				</td>
+			</tr>
+		</table>
+		<button class="btn btn-lg btn-warning btn-block" type="submit">会员登录</button>
+		<label class="checkbox">
+			<input name="remember" type="checkbox" value="remember-me"> 记住我
+		</label>
+	</form>
+	<i class="closeMemberLogoinForm" id="closeUserLogoinForm">×</i>
+</div>
+<div id="contents">
+	<div id="about">
+		<h1>会员专区</h1>
+
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-sm-12">
+					<section class="panel">
+						<header class="panel-heading">
+							预约列表
+							<span class="tools pull-right">
+                                <a href="index.php?p=Home&c=Order&a=add" class="btn btn-success btn-link">新增</a>
+                            </span>
+						</header>
+						<div class="panel-body">
+							<div class="adv-table">
+								<table  class="display table table-bordered table-striped" id="dynamic-table">
+									<thead>
+									<tr>
+										<th>姓名</th>
+										<th>电话</th>
+										<th>预约美发师工号</th>
+										<th>备注</th>
+										<th>预约日期</th>
+										<th>预约状态</th>
+										<th>回复信息</th>
+										<th>操作</th>
+									</tr>
+									</thead>
+									<tbody>
+									<?php foreach($rows as $row):?>
+									<tr class="gradeX">
+										<?php
+if($row['status']==2){
+$row['status']='预约失败';}
+elseif($row['status']==1){
+$row['status']='预约成功';}
+else{
+$row['status']='没处理';}
+?>
+										<td><?php echo $row['realname'];?></td>
+										<td><?php echo $row['phone'];?></td>
+										<td><?php echo $row['barber'];?></td>
+										<td><?php echo $row['content'];?></td>
+										<td><?php echo date('Y-m-d',$row['date']);?></td>
+										<td><?php echo $row['status'];?></td>
+										<td><?php echo $row['reply'];?></td>
+										<td>
+											<a href="index.php?p=Home&c=Order&a=remove&id=<?php echo $row['order_id'];?>">删除</a>
+										</td>
+									</tr>
+									<?php endForeach;?>
+									</tbody>
+								</table>
+							</div>
+							<div id="adv-table">
+								总计  <span id="totalRecords"><?php echo $count;?></span>个记录分为 <span id="totalPages"><?php echo $totalPage;?></span>页当前第 <span id="pageCurrent"><?php echo $page;?></span>
+								页，每页 <input type="text" size="3" id="pageSize" value="<?php echo $pageSize;?>" onkeypress="return listTable.changePageSize(event)">
+								<span id="page-link">
+                            <a href="index.php?p=Home&c=Order&a=about&page=1">第一页</a>
+                            <a href="index.php?p=Home&c=Order&a=about&page=<?php echo ($page-1)>0?($page-1):1; ?>">上一页</a>
+                            <a href="index.php?p=Home&c=Order&a=about&page=<?php echo ($page+1)>$totalPage?$totalPage:($page+1); ?>">下一页</a>
+                            <a href="index.php?p=Home&c=Order&a=about&page=<?php echo $totalPage;?>">最末页</a>
+                        </span>
+							</div>
+						</div>
+					</section>
+					<section class="panel">
+						<header class="panel-heading">
+							订单列表
+							<span class="tools pull-right">
+                                <!--<a href="index.php?p=Home&c=Order&a=add" class="btn btn-success btn-link"></a>-->
+                            </span>
+						</header>
+						<div class="panel-body">
+							<div class="adv-table">
+								<table  class="display table table-bordered table-striped" id="dynamic-table">
+									<thead>
+									<tr>
+										<th>购买商品</th>
+										<th>购买日期</th>
+										<th>状态</th>
+
+									</tr>
+									</thead>
+									<tbody>
+									<?php foreach($rs as $row):?>
+									<tr class="gradeX">
+										<td><?php echo $row['name'];?></td>
+										<td><?php echo date("Y-m-d H:i:s",$row['time']);?></td>
+										<td><?php echo $row['statu']==1 ? '已发货':'未发货';?></td>
+
+									</tr>
+									<?php endForeach;?>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<div id="footer">
+		<div id="articles">
+			<div class="header">
+				<div class="body">
+					<div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--<div class="footer">-->
+			<!--<form action="index.html" method="post">-->
+				<!--<input type="text" value="Enter email address and get 10% off" class="txtfield" onMouseUp="return false;" onFocus="this.select();">-->
+				<!--<input type="submit" value="SIGNUP" class="btn">-->
+			<!--</form>-->
+			<!--<p>-->
+				<!--&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>-->
+			<!--</p>-->
+		<!--</div>-->
+	</div>
+<div style="display:none"><script src='://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

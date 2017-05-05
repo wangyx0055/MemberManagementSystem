@@ -1,0 +1,91 @@
+<?php
+include ('./header.html');
+?>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            会员列表
+                            <span class="tools pull-right">
+                                <a href="?p=Admin&c=Users&a=add" class="btn btn-success btn-link">新增</a>
+                            </span>
+                        </header>
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <table  class="display table table-bordered table-striped" id="dynamic-table">
+                                    <thead>
+                                    <tr>
+                                        <th>会员头像</th>
+                                        <th>会员ID</th>
+                                        <th>登录名</th>
+                                        <th>密码</th>
+                                        <th class="hidden-phone">会员姓名<small style="color:mediumvioletred;font-family:'Microsoft Yahei">（可搜索）</small></th>
+                                        <th class="hidden-phone">性别</th>
+                                        <th class="hidden-phone">电话</th>
+                                        <th class="hidden-phone">备注</th>
+                                        <th class="hidden-phone">账户余额</th>
+                                        <th class="hidden-phone">积分</th>
+                                        <th class="hidden-phone">VIP(Y/N)</th>
+                                        <th class="hidden-phone">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach($rows as $list):?>
+                                    <tr>
+                                        <td style="text-align:center;vertical-align: middle"><img style='width:80px;height:80px;border-radius:50%' src="./Uploads/<?php echo $list['thumb_photo'];?>" alt=""></td>
+                                        <td><?php echo $list['users_id'];?></td>
+                                        <td><?php echo $list['username'];?></td>
+                                        <td><?php echo $list['password'];?></td>
+                                        <td class="hidden-phone" style="font-family: '楷体';color:mediumvioletred;text-align: center;font-size:26px;"><?php echo $list['realname'];?></td>
+                                        <td class="hidden-phone"><?php echo $list['sex'];?></td>
+                                        <td class="hidden-phone"><?php echo $list['telephone'];?></td>
+                                        <td class="hidden-phone"><?php echo $list['remark'];?></td>
+                                        <td class="hidden-phone"><?php echo $list['money'];?></td>
+                                        <td class="hidden-phone"><?php echo $list['acc'];?></td>
+                                        <td class="hidden-phone"><?php echo $list['is_vip'];?></td>
+                                        <td class="hidden-phone">
+                                            <a href="index.php?p=Admin&c=Histories&a=topup&id=<?php echo $list['users_id'];?>">充值</a>|
+                                            <a href="index.php?p=Admin&c=Histories&a=contion&id=<?php echo $list['users_id'];?>">消费</a>|
+                                            <a href="index.php?p=Admin&c=Histories&a=contentlists&id=<?php echo $list['users_id'];?>">消费记录</a>|
+                                            <a href="?p=Admin&c=Users&a=edit&id=<?php echo $list['users_id'];?>">修改</a>|
+                                            <a href="?p=Admin&c=Users&a=delete&id=<?php echo $list['users_id'];?>" onclick="confirm('确定删除？')">删除</a></td>
+
+                                    </tr>
+                                    <?php endForeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                            <div id="adv-table">
+                                总计  <span id="totalRecords"><?php echo $count;?></span>个记录分为 <span id="totalPages"><?php echo $totalPage;?></span>页当前第 <span id="pageCurrent"><?php echo $page;?></span>
+                                页，每页 <input type="text" size="3" id="pageSize" value="<?php echo $pageSize;?>" onkeypress="return listTable.changePageSize(event)">
+                                <span id="page-link">
+                            <a href="index.php?p=Admin&c=Users&a=lists&page=1">第一页</a>
+                            <a href="index.php?p=Admin&c=Users&a=lists&page=<?php echo ($page-1)>0?($page-1):1; ?>">上一页</a>
+                            <a href="index.php?p=Admin&c=Users&a=lists&page=<?php echo ($page+1)>$totalPage?$totalPage:($page+1); ?>">下一页</a>
+                            <a href="index.php?p=Admin&c=Users&a=lists&page=<?php echo $totalPage;?>">最末页</a>
+                        </span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="./Public/Admin/js/jquery-1.10.2.min.js"></script>
+<script src="./Public/Admin/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="./Public/Admin/js/bootstrap.min.js"></script>
+<script src="./Public/Admin/js/jquery.nicescroll.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="./Public/Admin/js/scripts.js"></script>
+
+</body>
+</html>

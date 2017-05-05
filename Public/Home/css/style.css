@@ -22,7 +22,7 @@ img {
 	border: 0;
 }
 /*------------------------------ HEADER ------------------------------*/
-#navigation li a,#memberLogin,#contact form input.btn {
+#navigation li a,#memberLogin,#userLogin,#contact form input.btn {
 	background: url(../images/buttons.png) no-repeat;
 }
 #blog div.box, #blog div.box div.header {
@@ -60,7 +60,7 @@ img {
 	margin-left: -16px;
 	text-align: center;
 }
-#navigation li a,#memberLogin{
+#navigation li a,#memberLogin,#userLogin{
 	background-position: -144px 0;
 	color: #e4dec0;
 	display: block;
@@ -74,10 +74,10 @@ img {
 	text-shadow: 1px 1px #3d3413;
 	text-transform: uppercase;
 }
-#memberLogin{
+#memberLogin,#userLogin{
 	cursor:pointer;
 }
-#navigation li a:hover, #navigation li.selected a,#memberLogin:hover{
+#navigation li a:hover, #navigation li.selected a,#memberLogin:hover,#userLogin:hover{
 	background-position: 0 0;
 	color: #fff;
 }
@@ -90,7 +90,7 @@ img {
 }
 #contents > div {
 	width: 960px;
-	margin: 0 auto;
+	margin: 30px auto;
 	padding-top: 30px;
 }
 #contents h1, h3, h5 {
@@ -101,14 +101,16 @@ img {
 	text-transform: uppercase;
 }
 #contents h5 {
-	color: #474747;
+	/*color: #474747;*/
+	color:white;
 }
 #contents p {
-	color: #474747;
+	color: #f1e8e8;
 	font-size: 13px;
 	line-height: 24px;
 	margin: 0;
 	padding: 0 0 24px;
+	letter-spacing: 1px;
 }
 #contents p a {
 	color: #474747;
@@ -204,9 +206,13 @@ img {
 }
 /** MAIN **/
 #main {
-	float: left;
+	/*float: left;*/
+	border:1px solid transparent;
+	position: relative;
 	min-height: 840px;
 	width: 620px;
+	overflow: hidden;
+	z-index: 9999;
 }
 #main ul {
 	list-style: none;
@@ -214,6 +220,7 @@ img {
 	padding: 0;
 }
 #main ul li {
+	position: relative;
 	display: inline-block;
 	margin-bottom: 24px;
 }
@@ -590,7 +597,46 @@ img {
 	width:258px;
 	height:114px;
 }
-#loginImg{
-	width:120px;
-	height:120px;
+#loginImg,#userloginImg{
+	width:100px;
+	height:100px;
+}
+#contents h3, h5,b{
+	color: #e4dec0;
+	font-family: 'Caudex-Regular';
+	font-size: 15px;
+}
+b{
+	font-size: 16px;
+	color:white;
+}
+span.change{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: block;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-family:"Microsoft Yahei";
+	color: white;
+	border-bottom: 1px solid #166126;
+	font-size: 17px;
+	background: orange;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 3px;
+}
+span.change:hover{
+	background:#FFC107;
+}
+#contents h3#rand{
+	color: #E91E63;
+}
+#markProducts{
+	position:relative;
+	height:630px;
+	overflow:hidden;
+	z-index:99;
 }

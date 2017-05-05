@@ -1,0 +1,59 @@
+<?php
+include ('./header.html');
+?>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            充值规则列表
+                            <span class="tools pull-right">
+                                <a href="index.php?p=Admin&c=Czgz&a=add" class="btn btn-success btn-link">新增</a>
+                            </span>
+                        </header>
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <table  class="display table table-bordered table-striped" id="dynamic-table">
+                                    <thead>
+                                    <tr>
+
+                                        <th class="hidden-phone">充值金额</th>
+                                        <th class="hidden-phone">赠送金额</th>
+                                        <th class="hidden-phone">操作</th>
+                                    </tr>
+
+                                    <?php foreach($rows as $row):?>
+                                    <tr>
+                                        <td><?php echo $row['cj'];?></td>
+                                        <td><?php echo $row['zj'];?></td>
+                                    <td>
+                                        <a href="index.php?p=Admin&c=Czgz&a=edit&id=<?php echo $row['id'];?>">修改</a>
+                                        <a href="index.php?p=Admin&c=Czgz&a=del&id=<?php echo $row['id'];?>">删除</a>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach;?>
+                                </table>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="./Public/Admin/js/jquery-1.10.2.min.js"></script>
+<script src="./Public/Admin/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="./Public/Admin/js/bootstrap.min.js"></script>
+<script src="./Public/Admin/js/jquery.nicescroll.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="./Public/Admin/js/scripts.js"></script>
+
+</body>
+</html>

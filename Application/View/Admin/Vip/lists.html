@@ -1,0 +1,73 @@
+<?php
+include ('./header.html');
+?>
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                管理首页
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">管理后台</a>
+                </li>
+                <li class="active"> 管理首页 </li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Vip列表
+                            <span class="tools pull-right">
+                                <a href="?p=Admin&c=Vip&a=add" class="btn btn-success btn-link">新增</a>
+                            </span>
+                        </header>
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <table  class="display table table-bordered table-striped" id="dynamic-table">
+                                    <thead>
+                                    <tr>
+                                        <th>Vip等级</th>
+                                        <th>折扣</th>
+                                        <th>等级条件(金额)</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach($rows as $row):?>
+                                    <tr class="gradeX">
+                                        <td><?php echo $row['rank'];?></td>
+                                        <td><?php echo $row['zhekou'];?></td>
+                                        <td><?php echo $row['InMoney'];?></td>
+                                        <td><a href="index.php?p=Admin&c=Vip&a=edit&id=<?php echo $row['vip_id'];?>">更新</a></td>
+
+                                    </tr>
+                                    <?php endForeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="./Public/Admin/js/jquery-1.10.2.min.js"></script>
+<script src="./Public/Admin/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="./Public/Admin/js/bootstrap.min.js"></script>
+<script src="./Public/Admin/js/jquery.nicescroll.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="./Public/Admin/js/scripts.js"></script>
+
+</body>
+</html>

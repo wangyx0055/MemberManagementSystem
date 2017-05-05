@@ -1,0 +1,82 @@
+<?php
+include ('./header.html');
+?>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            会员列表
+                            <span class="tools pull-right">
+                                <!--<a href="index.php?p=Admin&c=Plans&a=add" class="btn btn-success btn-link">新增</a>-->
+                            </span>
+                        </header>
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <table  class="display table table-bordered table-striped" id="dynamic-table">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>会员名称</th>
+                                        <th>服务员工</th>
+                                        <th class="hidden-phone">电话</th>
+                                        <th class="hidden-phone">余额</th>
+                                        <th class="hidden-phone">Vip</th>
+                                        <th class="hidden-phone">头像</th>
+                                        <th class="hidden-phone">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach($rows as $row):?>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><?php echo $row['remainder'];?></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <a href="index.php?p=Admin&c=Histories&a=topup&id=<?php echo $row['history_id'];?>">充值</a>
+                                            <a href="index.php?p=Admin&c=Histories&a=contion&id=<?php echo $row['history_id'];?>">消费</a>
+                                            <a href="index.php?p=Admin&c=Histories&a=contentlists&id=<?php echo $row['history_id'];?>">消费记录</a>
+                                            <a href="index.php?p=Admin&c=Histories&a=delete&id=<?php echo $row['history_id'];?>">删除</a>
+                                        </td>
+
+                                    </tr>
+                                    <?php endforeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="adv-table">
+                                总计  <span id="totalRecords"><?php echo $count;?></span>个记录分为 <span id="totalPages"><?php echo $totalPage;?></span>页当前第 <span id="pageCurrent"><?php echo $page;?></span>
+                                页，每页 <input type="text" size="3" id="pageSize" value="<?php echo $pageSize;?>" onkeypress="return listTable.changePageSize(event)">
+                                <span id="page-link">
+                            <a href="index.php?p=Admin&c=Plans&a=page&page=1">第一页</a>
+                            <a href="index.php?p=Admin&c=Plans&a=page&page=<?php echo ($page-1)>0?($page-1):1; ?>">上一页</a>
+                            <a href="index.php?p=Admin&c=Plans&a=page&page=<?php echo ($page+1)>$totalPage?$totalPage:($page+1); ?>">下一页</a>
+                            <a href="index.php?p=Admin&c=Plans&a=page&page=<?php echo $totalPage;?>">最末页</a>
+                        </span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="./Public/Admin/js/jquery-1.10.2.min.js"></script>
+<script src="./Public/Admin/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="./Public/Admin/js/bootstrap.min.js"></script>
+<script src="./Public/Admin/js/jquery.nicescroll.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="./Public/Admin/js/scripts.js"></script>
+
+</body>
+</html>

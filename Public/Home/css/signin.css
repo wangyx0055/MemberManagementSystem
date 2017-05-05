@@ -61,12 +61,12 @@ body {
 .form-signin button {
   border-radius: 0;
 }
-#closeMemberLogoinForm{
+.closeMemberLogoinForm,.closeUserLogoinForm{
     position :absolute;
-    top:20px;
+    top:40px;
     right:40px;
     width:60px;
-    height:40px;
+    height:100px;
     text-align:center;
     color:#fff;
     cursor:pointer;
@@ -76,7 +76,7 @@ body {
     font-family:'宋体';
     transition:1s;
 }
-#closeMemberLogoinForm:hover{
+.closeMemberLogoinForm:hover{
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);

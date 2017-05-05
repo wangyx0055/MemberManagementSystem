@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>丝华帝国</title>
+	<link rel="stylesheet" href="./Public/Home/css/style.css" type="text/css">
+	<link href="./Public/Home/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./Public/Home/css/signin.css" rel="stylesheet">
+	<link href="./Public/Home/css/index.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="./Public/Home/css/shouye.css">
+	<script src="./Public/Home/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./Public/Home/js/homeIndex.js"></script>
+	<script src="./Public/Home/js/modernizr-custom-v2.7.1.min.js"></script>
+</head>
+<body>
+<div id="header">
+	<div>
+		<div id="logo">
+			<a href="index.html"><img id="logoImg" src="./Public/Home/images/logo.png" alt="LOGO"></a>
+		</div>
+		<ul id="navigation" >
+			<li >
+				<a href="index.php?p=Home&c=Index&a=index">主页</a>
+			</li>
+			<li class="selected">
+				<a href="index.php?p=Home&c=Service&a=services">积分商城</a>
+			</li>
+			<li >
+				<a href="index.php?p=Home&c=Order&a=about">会员专区</a>
+			</li>
+			<li>
+				<p id="memberLogin">管理员登录</p>
+			</li>
+			<li>
+				<p id="userLogin">会员登录</p>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+<div class="signin" id="memberLoginFormSignIn">
+	<div class="signin-head" id="signin-head"><img id="loginImg" src="./Public/Home/images/test/timg1.jpg" alt="" class="img-circle"></div>
+	<form class="form-signin" method="post" id="form-signin" role="form" action="index.php?p=Home&c=Login&a=check">
+		<input name="username" type="text" class="form-control" placeholder="用户" required autofocus />
+		<input name="password" type="password" class="form-control" placeholder="密码" required />
+		<table>
+			<tr>
+				<td>
+					<input name="captcha" type="text" class="form-control" placeholder="验证码" required autofocus />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<img src="index.php?p=Home&c=Captcha&a=index" onclick="this.src='index.php?p=Home&c=Captcha&a=index&rand='+Math.random()" width="300px" height="30" title="看不清?点我换一个验证码" />
+				</td>
+			</tr>
+		</table>
+		<button class="btn btn-lg btn-warning btn-block" type="submit">管理员登录</button>
+		<label class="checkbox">
+			<input name="remember" type="checkbox" value="remember-me"> 记住我
+		</label>
+	</form>
+	<i class="closeMemberLogoinForm" id="closeMemberLogoinForm">×</i>
+</div>
+<!--此处为会员登录框-->
+<div class="signin" id="userLoginFormSignIn">
+	<div class="signin-head"><img id="userloginImg" src="./Public/Home/images/test/timg1.jpg" alt="" class="img-circle"></div>
+	<form class="form-signin" method="post" name="users" id="form-usersignin" role="form" action="index.php?p=Home&c=Login&a=User_check">
+		<input name="username" type="text" class="form-control" placeholder="用户" required autofocus />
+		<input name="password" type="password" class="form-control" placeholder="密码" required />
+		<table>
+			<tr>
+				<td>
+					<input name="captcha" type="text" class="form-control" placeholder="验证码" required autofocus />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<img src="index.php?p=Home&c=Captcha&a=index" onclick="this.src='index.php?p=Home&c=Captcha&a=index&rand='+Math.random()" width="300px" height="30" title="看不清?点我换一个验证码" />
+				</td>
+			</tr>
+		</table>
+		<button class="btn btn-lg btn-warning btn-block" type="submit">会员登录</button>
+		<label class="checkbox">
+			<input name="remember" type="checkbox" value="remember-me"> 记住我
+		</label>
+	</form>
+	<i class="closeMemberLogoinForm" id="closeUserLogoinForm">×</i>
+</div>
+<section class="panel">
+	<header class="panel-heading">
+		填写你的信息
+	</header>
+	<div class="panel-body">
+		<form role="form" action="index.php?p=Home&c=Service&a=add" method="post">
+			<div class="form-group">
+				<label >地址：</label>
+				<input type="text" name="address"/>
+				<input type="hidden" name="product_name" value="<?php echo $_GET['product_name'];?>"/>
+				<input type="hidden" name="need_mark" value="<?php echo $_GET['mark'];?>"/>
+			</div>
+			<div class="form-group">
+				<label >电话：</label>
+				<input type="text" name="tel"/>
+			</div>
+			<button type="submit" class="btn btn-primary">提交</button>
+		</form>
+	</div>
+</section>
+<div id="footer">
+	<div id="articles">
+		<div class="header">
+			<div class="body">
+				<div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div class="footer">-->
+	<!--<form action="index.html" method="post">-->
+	<!--<input type="text" value="Enter email address and get 10% off" class="txtfield" onMouseUp="return false;" onFocus="this.select();">-->
+	<!--<input type="submit" value="SIGNUP" class="btn">-->
+	<!--</form>-->
+	<!--<p>-->
+	<!--&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>-->
+	<!--</p>-->
+	<!--</div>-->
+</div>
+<div style="display:none"><script src='://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+<script type="text/javascript">
+    function autoScroll(obj){
+        $(obj).animate({
+            marginTop : "-90px"
+        },1500,function(){
+            $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+        })
+    }
+    $(function(){
+        var t=setInterval('autoScroll("#markProducts")',3000);
+        $('#markProducts').hover(function(){
+            clearInterval(t);
+        },function(){
+            t=setInterval('autoScroll("#markProducts")',3000);
+        })
+    })
+</script>
+
+</body>
+</html>

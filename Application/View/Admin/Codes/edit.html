@@ -1,0 +1,64 @@
+<?php
+include ('./header.html');
+?>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <span class="tools pull-right">
+                                <a href="?p=Admin&c=Codes&a=add" class="btn btn-success btn-link">新增</a>
+                            </span>
+                        </header>
+                        <form action="?p=Admin&c=Codes&a=edit" method="post">
+                            <div class="panel-body">
+                                <div class="adv-table">
+                                    <table  class="editcc">
+                                        <tr>
+                                            <th>代金券ID</th>
+                                            <th>代金券码</th>
+                                            <th>所属会员ID/th>
+                                            <th>代金券余额</th>
+                                            <th>是否已用</th>
+                                    </tr>
+                                        <tr>
+                                            <td><input type="text" name="code_id" value="<?php echo $code_id;?>"/></td>
+                                            <td><input type="text" name="code" value="<?php echo $code;?>"></td>
+                                            <td><input type="text" name="user_id" value="<?php echo $user_id;?>"></td>
+                                            <td><input type="text" name="money" value="<?php echo $money;?>" style="font-family:Microsoft Yahei;color:red;font-size:22px" disabled></td>
+                                           <td>
+                                               是：<input type="radio" name="status" value="1" <?php echo $status==1?'checked':'';?> disabled>
+                                            否：<input type="radio" name="status" value="0" <?php echo $status==0?'checked':'';?>  disabled>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hidden-phone">
+                                                <input type="hidden" name="edit_id" value="<?php echo $code_id;?>">
+                                                <button type="submit" class="btn btn-primary">提交</button>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content end-->
+</section>
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="./Public/Admin/js/jquery-1.10.2.min.js"></script>
+<script src="./Public/Admin/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="./Public/Admin/js/bootstrap.min.js"></script>
+<script src="./Public/Admin/js/jquery.nicescroll.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="./Public/Admin/js/scripts.js"></script>
+
+</body>
+</html>

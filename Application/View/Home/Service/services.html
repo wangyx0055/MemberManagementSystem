@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>丝华帝国</title>
+	<link rel="stylesheet" href="./Public/Home/css/style.css" type="text/css">
+	<link href="./Public/Home/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./Public/Home/css/signin.css" rel="stylesheet">
+	<link href="./Public/Home/css/index.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="./Public/Home/css/shouye.css">
+	<script src="./Public/Home/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./Public/Home/js/homeIndex.js"></script>
+	<script src="./Public/Home/js/modernizr-custom-v2.7.1.min.js"></script>
+</head>
+<body>
+<div id="header">
+	<div>
+		<div id="logo">
+			<a href="index.html"><img id="logoImg" src="./Public/Home/images/logo.png" alt="LOGO"></a>
+		</div>
+		<ul id="navigation" >
+			<li >
+				<a href="index.php?p=Home&c=Index&a=index">主页</a>
+			</li>
+			<li class="selected">
+				<a href="index.php?p=Home&c=Service&a=services">积分商城</a>
+			</li>
+			<li >
+				<a href="index.php?p=Home&c=Order&a=about">会员专区</a>
+			</li>
+			<li>
+				<p id="memberLogin">管理员登录</p>
+			</li>
+			<li>
+				<p id="userLogin">会员登录</p>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+<div class="signin" id="memberLoginFormSignIn">
+	<div class="signin-head" id="signin-head"><img id="loginImg" src="./Public/Home/images/test/timg1.jpg" alt="" class="img-circle"></div>
+	<form class="form-signin" method="post" id="form-signin" role="form" action="index.php?p=Home&c=Login&a=check">
+		<input name="username" type="text" class="form-control" placeholder="用户" required autofocus />
+		<input name="password" type="password" class="form-control" placeholder="密码" required />
+		<table>
+			<tr>
+				<td>
+					<input name="captcha" type="text" class="form-control" placeholder="验证码" required autofocus />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<img src="index.php?p=Home&c=Captcha&a=index" onclick="this.src='index.php?p=Home&c=Captcha&a=index&rand='+Math.random()" width="300px" height="30" title="看不清?点我换一个验证码" />
+				</td>
+			</tr>
+		</table>
+		<button class="btn btn-lg btn-warning btn-block" type="submit">管理员登录</button>
+		<label class="checkbox">
+			<input name="remember" type="checkbox" value="remember-me"> 记住我
+		</label>
+	</form>
+	<i class="closeMemberLogoinForm" id="closeMemberLogoinForm">×</i>
+</div>
+<!--此处为会员登录框-->
+<div class="signin" id="userLoginFormSignIn">
+	<div class="signin-head"><img id="userloginImg" src="./Public/Home/images/test/timg1.jpg" alt="" class="img-circle"></div>
+	<form class="form-signin" method="post" name="users" id="form-usersignin" role="form" action="index.php?p=Home&c=Login&a=User_check">
+		<input name="username" type="text" class="form-control" placeholder="用户" required autofocus />
+		<input name="password" type="password" class="form-control" placeholder="密码" required />
+		<table>
+			<tr>
+				<td>
+					<input name="captcha" type="text" class="form-control" placeholder="验证码" required autofocus />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">
+					<img src="index.php?p=Home&c=Captcha&a=index" onclick="this.src='index.php?p=Home&c=Captcha&a=index&rand='+Math.random()" width="300px" height="30" title="看不清?点我换一个验证码" />
+				</td>
+			</tr>
+		</table>
+		<button class="btn btn-lg btn-warning btn-block" type="submit">会员登录</button>
+		<label class="checkbox">
+			<input name="remember" type="checkbox" value="remember-me"> 记住我
+		</label>
+	</form>
+	<i class="closeMemberLogoinForm" id="closeUserLogoinForm">×</i>
+</div>
+	<div id="contents">
+		<div id="services">
+			<h1><small style="color:mediumvioletred">积分</small>兑换</h1>
+			<div id="main">
+				<ul id="markProducts">
+					<?php foreach($rows as $row):?>
+						<li>
+							<img src="./Uploads/<?php echo $row['thumb_photo'];?>" alt="Img"/>
+							<h5>
+								<b><?php echo $row['product_name'];?></b>
+								<i style="float:right;color:#000">所需积分：<strong style="color:red;font-size: 17px;font-style:normal;font-family:'楷体'"><?php echo $row['needed_mark']?></strong></i>
+							</h5>
+							<p><?php echo $row['product_detail'];?></p>
+							<span class="change"><a href="index.php?p=Home&c=Service&a=add&product_name='<?php echo $row['product_name'];?>'&mark=<?php echo $row['needed_mark']?>">兑换</a></span>
+						</li>
+					<?php endforeach;?>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+<div id="footer">
+	<div id="articles">
+		<div class="header">
+			<div class="body">
+				<div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div class="footer">-->
+	<!--<form action="index.html" method="post">-->
+	<!--<input type="text" value="Enter email address and get 10% off" class="txtfield" onMouseUp="return false;" onFocus="this.select();">-->
+	<!--<input type="submit" value="SIGNUP" class="btn">-->
+	<!--</form>-->
+	<!--<p>-->
+	<!--&copy; Copyright &copy; 2013.Company name All rights reserved.<a target="_blank" href="://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a>-->
+	<!--</p>-->
+	<!--</div>-->
+</div>
+<div style="display:none"><script src='://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+<script type="text/javascript">
+    function autoScroll(obj){
+        $(obj).animate({
+            marginTop : "-90px"
+        },1500,function(){
+            $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+        })
+    }
+    $(function(){
+        var t=setInterval('autoScroll("#markProducts")',3000);
+        $('#markProducts').hover(function(){
+            clearInterval(t);
+        },function(){
+            t=setInterval('autoScroll("#markProducts")',3000);
+        })
+    })
+</script>
+<!--弹出商品详情页面-->
+<div id="showMark">
+	<div class="Xcontent">
+		<ul class="Xcontent01">
+			<div class="Xcontent06"><img src="./Public/Home/images/shangpinxiangqing/X1.png"></div>
+			<ol class="Xcontent08">
+				<div class="Xcontent07"><img src="./Public/Home/images/shangpinxiangqing/X1.png"></div>
+				<div class="Xcontent09"><img src="./Public/Home/images/shangpinxiangqing/X7.png"></div>
+				<div class="Xcontent10"><img src="./Public/Home/images/shangpinxiangqing/X8.png"></div>
+				<div class="Xcontent11"><img src="./Public/Home/images/shangpinxiangqing/X9.png"></div>
+				<div class="Xcontent12"><img src="./Public/Home/images/shangpinxiangqing/X10.png"></div>
+			</ol>
+			<ol class="Xcontent13">
+				<div class="Xcontent14"><a href="#"><p>新物品</p></a></div>
+				<div class="Xcontent15"><img src="./Public/Home/images/shangpinxiangqing/X11.png"></div>
+				<div class="Xcontent16"><p>充电5分钟，温暖2小时</p></div>
+				<div class="Xcontent17">
+					<p class="Xcontent18">售价</p>
+					<p class="Xcontent19">￥<span>69.00</span></p>
+					<div class="Xcontent20">
+						<p class="Xcontent21">促销</p>
+						<img src="./Public/Home/images/shangpinxiangqing/X12.png">
+						<p class="Xcontent22">领610元新年礼券，满再赠好礼</p>
+					</div>
+					<div class="Xcontent23">
+						<p class="Xcontent24">服务</p>
+						<p class="Xcontent25">30天无忧退货&nbsp;&nbsp;&nbsp;&nbsp;       48小时快速退款 &nbsp;&nbsp;&nbsp;&nbsp;        满88元免邮</p>
+					</div>
+
+				</div>
+				<div class="Xcontent26">
+					<p class="Xcontent27">颜色</p>
+					<div class="Xcontent28"><img  src="./Public/Home/images/shangpinxiangqing/X14.png"></div>
+					<div class="Xcontent29"><img  src="./Public/Home/images/shangpinxiangqing/X1.png"></div>
+				</div>
+				<div class="Xcontent30">
+					<p class="Xcontent31">数量</p>
+					<div class="Xcontent32"><img src="./Public/Home/images/shangpinxiangqing/X15.png"></div>
+					<form><input class="input" value="1"></form>
+					<div class="Xcontent33"><img src="./Public/Home/images/shangpinxiangqing/16.png"></div>
+				</div>
+				<div class="Xcontent34"><a href="#"><img src="./Public/Home/images/shangpinxiangqing/X17.png"></a></div>
+				<div class="Xcontent35"><a href="#"><img src="./Public/Home/images/shangpinxiangqing/X18.png"></a></div>
+			</ol>
+		</ul>
+	</div>
+</div>
+<!--弹出商品详情页面结束-->
+</body>
+</html>

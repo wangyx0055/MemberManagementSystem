@@ -1,0 +1,692 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body {
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	margin: 0px;
+    padding: 0px 0px 0px 0px;
+	background: #F5FEE0 center no-repeat scroll;
+	color: black;
+	cursor: default;
+}
+
+a{
+    border:0px;
+    text-decoration: none;
+    color:black;
+}
+
+a img
+{
+    border: 0px;
+}
+
+a:hover
+{
+    
+}
+
+a:hover img
+{
+    opacity:0.7;
+}
+
+form{
+	padding:0px;
+	margin:0px;
+}
+
+/* Top */
+
+.top_sh
+{
+    display: block; position: relative;
+    width:100%; height:600px;
+    background: #F5FEE0 url(../images/head-bkg.jpg) top center repeat-x;
+    margin-top:30px; padding:0px;
+}
+
+.top
+{
+    display: block; position: relative;
+    width:978px; height:120px;
+    margin:auto;
+    padding-top:50px;
+}
+
+.menu-box
+{
+    display: block; position: relative;
+    width:645px; height:20px;
+    padding-left: 340px;
+}
+
+.menu-box ul
+{
+    margin:0px; padding:0px;
+}
+
+.menu-box ul li
+{
+    float:left;
+}
+
+a.logo
+{
+    position: absolute;
+    top: 45px; left: 1px;
+    z-index: 200;
+}
+
+/* Menu */
+
+.jqueryslidemenu{
+    font: bold 12px Verdana;
+    width: 100%;
+    z-index:119;
+    position: relative;
+}
+
+.jqueryslidemenu ul{
+    color:black;
+    list-style-type: none;
+    padding:0px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
+    position: relative;
+    height:34px;
+    z-index: 120;
+    overflow: hidden;
+}
+
+/*Top level list items*/
+.jqueryslidemenu ul li{
+    float: left;
+    margin: 0px 0px 0px -1px;
+    padding: 0px 0px 0px 0px;
+    position: relative;
+    display: inline;
+    border-left:1px solid black;
+}
+
+/*Top level menu link items style*/
+.jqueryslidemenu ul li a{
+    color:black;
+    font-weight: bold;
+    font-size:13px;
+    padding: 2px 25px 2px 25px;
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+}
+
+* html .jqueryslidemenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+    display: inline-block;
+}
+
+.jqueryslidemenu ul li a:link, .jqueryslidemenu ul li a:visited{
+}
+
+
+.jqueryslidemenu ul li:hover, .jqueryslidemenu ul li.active
+{
+    
+}
+
+.jqueryslidemenu ul li:hover a, .jqueryslidemenu ul li.active a
+{
+    color: red;
+}
+	
+/*1st sub level menu*/
+.jqueryslidemenu ul li ul{
+    position: absolute;
+    left: 0;
+    display: block;
+    visibility: hidden;
+    background: white;
+    opacity:0.7;
+    height:auto;
+    
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jqueryslidemenu ul li ul li{
+    display: list-item;
+    float: none;
+    height: auto;
+    border:0px;
+    margin:0px;
+    padding:0px;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jqueryslidemenu ul li ul li ul{
+    top: 0;
+}
+
+/* Sub level menu links style */
+.jqueryslidemenu ul li ul li a{
+    font: normal 13px Verdana;
+    width: 160px; /*width of sub menus*/
+    padding: 5px;
+    margin: 0;
+    border:0px;
+    color: black;
+}
+
+/* Sub level menu links style */
+.jqueryslidemenu ul li.active ul li a, .jqueryslidemenu ul li:hover ul li a{
+    font: normal 13px Verdana;
+    width: 160px; /*width of sub menus*/
+    padding: 5px;
+    margin: 0;
+    border:0px;
+    color: black;
+}
+
+.jqueryslidemenuz ul li ul li a:hover{ /*sub menus hover style*/
+    background: #eff9ff;
+    border:0px;
+    padding: 5px;
+    margin: 0;
+    color:black;
+    background: #C7E5CF;
+}
+
+.jqueryslidemenu ul li ul li a:hover, .jqueryslidemenu ul li ul li a.active
+{
+    color:black;
+    background: #C7E5CF;
+}
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+    position: absolute;
+    top: 12px;
+    right: 7px;
+}
+
+.rightarrowclass{
+    position: absolute;
+    top: 6px;
+    right: 5px;
+}
+
+/* Mid */
+
+.mid_sh
+{
+    display: block; position: relative;
+    width:978px;
+    background: white;
+    margin:auto; padding:0px;
+    margin:-30px auto 0px auto;
+}
+
+.mid
+{
+    display: block; position: relative;
+    width:978px; height:500px;
+    margin:auto;
+}
+
+/* Content boxes */
+
+.mid .content-container
+{
+    display: block;
+    position:relative ;
+}
+
+.mid .content-box, .mid2 .content-box
+{
+    width:200px; min-height:300px;
+    float:left;
+    padding:0px 6px 0px 6px;
+}
+
+.mid .l500, .mid2 .l500
+{
+    width: 930px;
+    padding: 6px 0px 6px 25px;
+    overflow: hidden;
+}
+
+
+
+.mid .l400, .mid2 .l400
+{
+    width: 455px;
+    padding: 6px 0px 6px 25px;
+    overflow: hidden;
+}
+
+.content-box p
+{
+    padding:0px; margin:0px;
+}
+
+.mid .content-box h3, .mid2 .content-box h3
+{
+    font-size: 24px;
+    font-weight: normal;
+    padding:3px 28px 10px 13px; margin:0px;
+    text-align: center;
+    color: black;
+    display: block;
+}
+
+.mid .content-box ul, .mid2 .content-box ul
+{
+    margin:0px; padding:0px 0px 0px 0px;
+    list-style: circle;
+}
+
+.mid .content-box ol ul, .mid2 .content-box ol ul
+{
+    margin:0px; padding:0px 0px 0px 10px;
+    list-style: circle;
+}
+
+.mid .content-box ul li, .mid .content-box ol li, 
+.mid2 .content-box ul li, .mid2 .content-box ol li
+{
+    color: #666666;
+    /*background: url(../images/ul-style.png) no-repeat 15px;*/
+    padding: 5px 0px 5px 1px;
+}
+
+.mid .content-box ul li a, .mid .content-box ol li a, 
+.mid2 .content-box ul li a, .mid2 .content-box ol li a
+{
+    color: green;
+    text-decoration: underline;
+}
+
+
+
+
+.mid .content-box .more-container, .mid2 .content-box .more-container
+{
+    padding:15px 0 15px 15px;
+}
+
+.mid .content-box a.more-link, .mid2 .content-box a.more-link
+{
+    display: block;
+    background: url(../images/button-bkg.jpg) no-repeat;
+    width:80px; height: 17px;
+    padding:8px 14px;
+    color:white;
+    font-weight: normal;
+    cursor: pointer;
+    margin: 10px 0px 0px 0px;
+    clear: both;
+    
+}
+
+.mid a.more-link:hover
+{
+    text-decoration: underline;
+}
+
+.mid .content-text
+{
+    border-right: 2px solid #CAC3BD;
+    padding-right:15px;
+    width:910px;
+}
+
+.mid .l700
+{
+    width: 900px;
+    padding: 6px 25px 6px 25px;
+    overflow: hidden;
+    height:auto;
+}
+
+.mid .l700 .content-text
+{
+    border-right: 0px solid #CAC3BD;
+}
+
+.mid .content-text p
+{
+    padding:5px 0px;
+}
+
+.mid .content-text-1
+{
+    padding: 20px 0px 20px 0px;
+    position: relative;
+}
+
+a.map
+{
+    position:absolute;
+    top:8px;
+    right:30px;
+}
+
+strong.content-subtitle
+{
+    padding: 5px 0px 7px 0px;
+    display: block;
+}
+
+.content-main-image
+{
+    width: 175px; height: 137px;
+    padding:0px 5px 0px 0px;
+    float:left;
+    position:relative;
+    overflow: hidden;
+}
+
+.content-main-image a
+{
+    display:block;
+    position: absolute;
+    width: 180px; height: 137px;
+    top:0px; left:0px;
+    margin:auto;
+    text-align: center;
+    background: url(../images/news-bkg-image.png) no-repeat;
+}
+
+.content-main-image img
+{
+    height: 137px;
+}
+
+.content-main-image-2
+{
+    width: 160px;
+    height: 120px;
+    padding:0px 13px 8px 0px;
+    float:left;
+    background: url(../images/image-bkg-2.png) no-repeat;
+    margin: 5px 0px 5px 0px;
+}
+
+.content-main-image-2 a
+{
+    display:block;
+    width: 160px;
+    height: 120px;
+    margin:auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.content-main-image-2 a img
+{
+}
+
+.content-box table
+{
+    margin:10px 0px 0px 0px;
+    text-align: center;
+    border-top:1px solid #E8E8E8;
+    border-left:1px solid #E8E8E8;
+    border-collapse:collapse;
+}
+
+.content-box table td
+{
+    padding: 5px 10px 5px 10px;
+    border-bottom:1px solid #E8E8E8;
+    border-right:1px solid #E8E8E8;
+}
+
+.content-box table thead td
+{
+    background: url(../images/form-input-textbox-2.jpg) repeat-x;
+    font-weight: bold;
+}
+
+
+/* Bott */
+
+.bott_sh
+{
+    display: block; position: relative;
+    width:100%;
+    background: #D0FD93;
+    margin:auto; 
+    overflow: hidden;
+}
+
+.bott
+{
+    display: block; position: relative;
+    width:938px;
+    margin:auto;
+    padding:15px 0px 15px 0px;
+    height:14px;
+    color: black;
+    font-size: 12px;
+    text-align: left;
+}
+
+.bott_sh1
+{
+    display: block; position: relative;
+    width:978px;
+    background: white;
+    margin:auto; padding:0px;
+    height: 20px;
+}
+
+a.made-by {
+    font-weight: normal;
+    color:black;
+    text-decoration: none;
+}
+
+a.made-by:hover
+{
+    text-decoration: underline;
+}
+
+/* Articles */
+
+.articles-container
+{
+    height:210px;
+    width:100%;
+    position: relative;
+    margin-top:-20px;
+    display: block;
+}
+
+.articles-container .article
+{
+    width:205px; height: 205px;
+    padding:10px;
+    margin: -25px 0px 0px 15px !important;
+    margin: -25px 0px 0px 11px;
+    float: left; position: relative;
+    background: url(../images/article.png) no-repeat;
+    
+}
+
+.articles-container .article .title
+{
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 2px solid #CAC3BD;
+    padding: 10px 0px 15px 0px;
+}
+
+.articles-container .article .text
+{
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 0px 15px 0px;
+    height:60px;
+}
+
+.articles-container .article a.more
+{
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0px 5px 0px;
+    color:red;
+    text-decoration: none;
+}
+
+.articles-container .article a.more:hover
+{
+    text-decoration: underline;
+}
+
+/* Form */
+
+div.left_p{
+	float:left;
+	width:350px;
+	margin-left:23px;
+	margin-bottom: 20px;
+}
+
+div.right_p{
+	float:left;
+	width:330px;
+	margin-bottom: 20px;
+	color:black;
+	line-height: 125%;
+}
+
+form label{
+	color:black;
+	font-weight: normal;
+	padding:5px 0px 3px 0px;
+	display:block;
+}
+
+form input{
+	background: white url(../images/form-input-textbox-2.jpg) repeat-x;
+    border: 2px solid #E3E3E3;
+	width:350px; height:19px;
+	padding:4px;
+	color:black;
+}
+
+form textarea{
+	background: white url(../images/form-input-textbox-2.jpg) repeat-x;
+    border: 2px solid #E3E3E3;
+	width:350px; height:99px;
+	padding:4px;
+	color:black;
+}
+
+form fieldset
+{
+    border:0px;
+    margin:0px;
+    padding:0px;
+}
+
+form input.button{
+	background: white;
+	width:69px; height:27px;
+	font-weight: bold;
+	cursor: pointer
+}
+
+form input.button:hover{
+	color:#959595;
+}
+
+a.button_1{
+	background: #F1EEE0 url(../images/form_input_button.gif) no-repeat;
+	display:block;
+	width:69px; height:17px;
+	padding:5px 0px;
+	margin-top:5px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.mid .content-box div.error h3,
+.mid2 .content-box div.error h3
+{
+    color:red;
+    border:0px;
+    padding:10px 0px 10px 0px;
+}
+
+.mid .content-box div.error p,
+.mid2 .content-box div.error p
+{
+    color:red;
+    padding:0px;
+}
+
+/* Form error */
+
+	.formError {
+			position:absolute;
+			top:300px; left:300px;
+			width:150px;
+			padding-bottom:15px;
+			display:block;
+			z-index:10;
+		}
+			.formError .formErrorContent {
+				width:100%; 
+				background:#000;
+				color:#fff;
+				font-family:tahoma;
+				font-size:10px;
+				box-shadow: 0px 0px 6px #000;
+				-moz-box-shadow: 0px 0px 6px #000;
+				-webkit-box-shadow: 0px 0px 6px #000;
+				padding:4px 10px 4px 10px;
+				border-radius: 6px;
+				-moz-border-radius: 6px;
+				-webkit-border-radius: 6px;
+			}
+			.formError .formErrorArrow{
+				position:absolute;
+				bottom:0;left:20px;
+				width:15px; height:15px;
+				
+			}
+				.formError .formErrorArrow div{
+					box-shadow: 0px 0px 6px #000;
+					-moz-box-shadow: 0px 0px 6px #000;
+					-webkit-box-shadow: 0px 0px 6px #000;
+					font-size:0px; 
+				}
+				.formError .formErrorArrow .line10{width:15px;height:1px; background:#000;margin:0 auto; font-size:0px; display:block;} 
+				.formError .formErrorArrow .line9{width:13px;height:1px; background:#000;margin:0 auto;display:block;} 
+				.formError .formErrorArrow .line8{width:11px;height:1px; background:#000;margin:0 auto;display:block;} 
+				.formError .formErrorArrow .line7{width:9px;height:1px; background:#000;margin:0 auto;display:block;} 
+				.formError .formErrorArrow .line6{width:7px;height:1px; background:#000;margin:0 auto;display:block;} 
+				.formError .formErrorArrow .line5{width:5px;height:1px; background:#000;margin:0 auto;display:block;} 
+				.formError .formErrorArrow .line4{width:3px;height:1px; background:#000;margin:0 auto;display:block;} 
+				.formError .formErrorArrow .line3{width:1px;height:1px; background:#000;margin:0 auto;display:block;} 
+
+pre {
+    color: #414141;
+    display: block;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0 10px 10px;
+    position: relative;
+    white-space: pre;
+    width: 915px;
+    border: 1px dotted black;
+}
+
+
+
+

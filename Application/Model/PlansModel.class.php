@@ -11,6 +11,14 @@ class PlansModel extends Model
         //3.返回结果
         return $rows;
     }
+    public function getAll2(){
+        //1.准备sql
+        $sql = "select * from plans limit 4";
+        //2.执行sql
+        $rows = $this->db->fetchAll($sql);
+        //3.返回结果
+        return $rows;
+    }
     //添加套餐功能
     public function add($data){
 //        var_dump($data);exit;

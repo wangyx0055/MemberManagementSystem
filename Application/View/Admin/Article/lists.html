@@ -1,0 +1,90 @@
+<?php
+include ('./header.html');
+?>
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                管理首页
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">管理后台</a>
+                </li>
+                <li class="active"> 管理首页 </li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            活动列表
+                            <span class="tools pull-right">
+                                <a href="index.php?p=Admin&c=Article&a=add" class="btn btn-success btn-link">新增</a>
+                            </span>
+                        </header>
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <table  class="display table table-bordered table-striped" id="dynamic-table">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>标题</th>
+                                        <th>内容</th>
+                                        <th>开始时间</th>
+                                        <th>结束时间</th>
+                                        <th>发布时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach($rows as $row):?>
+                                    <tr class="gradeX">
+                                        <td><?php echo $row['article_id'];?></td>
+                                        <td><?php echo $row['title'];?></td>
+                                        <td><?php echo htmlspecialchars_decode($row['content']);?></td>
+                                        <td><?php echo date('Y-m-d',$row['start']);?></td>
+                                        <td><?php echo date('Y-m-d',$row['end']);?></td>
+                                        <td><?php echo date('Y-m-d',$row['time']);?></td>
+                                        <td>
+                                            <a href="index.php?p=Admin&c=Article&a=remove&id=<?php echo $row['article_id'];?>">删除</a>
+                                            <a href="index.php?p=Admin&c=Article&a=edit&id=<?php echo $row['article_id'];?>">修改</a>
+                                        </td>
+                                    </tr>
+                                    <?php endForeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="adv-table">
+                                总计  <span id="totalRecords"><?php echo $count;?></span>个记录分为 <span id="totalPages"><?php echo $totalPage;?></span>页当前第 <span id="pageCurrent"><?php echo $page;?></span>
+                                页，每页 <input type="text" size="3" id="pageSize" value="<?php echo $pageSize;?>" onkeypress="return listTable.changePageSize(event)">
+                                <span id="page-link">
+                            <a href="index.php?p=Admin&c=Article&a=lists&page=1">第一页</a>
+                            <a href="index.php?p=Admin&c=Article&a=lists&page=<?php echo ($page-1)>0?($page-1):1; ?>">上一页</a>
+                            <a href="index.php?p=Admin&c=Article&a=lists&page=<?php echo ($page+1)>$totalPage?$totalPage:($page+1); ?>">下一页</a>
+                            <a href="index.php?p=Admin&c=Article&a=lists&page=<?php echo $totalPage;?>">最末页</a>
+                        </span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="./Public/Admin/js/jquery-1.10.2.min.js"></script>
+<script src="./Public/Admin/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="./Public/Admin/js/bootstrap.min.js"></script>
+<script src="./Public/Admin/js/jquery.nicescroll.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="./Public/Admin/js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -45,35 +45,35 @@
                 <li class="active"><a href="index.php?p=Admin&c=Index&a=index"><i class="fa fa-home"></i> <span>管理首页</span></a></li>
                 <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>店铺管理</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="lists.html"> 员工列表</a></li>
-                        <li><a href="#"> 新增员工</a></li>
-                        <li><a href="lists.html"> 部门列表</a></li>
-                        <li><a href="#"> 新增部门</a></li>
-                        <li><a href="#"> VIP级别管理</a></li>
+                        <li><a href="?p=Admin&c=Members&a=lists"> 员工列表</a></li>
+                        <li><a href="?p=Admin&c=Members&a=add"> 新增员工</a></li>
+                        <li><a href="?p=Admin&c=Group&a=lists"> 部门列表</a></li>
+                        <li><a href="?p=Admin&c=Group&a=add"> 新增部门</a></li>
+           
+                        <li><a href="?p=Admin&c=Vip&a=lists"> VIP级别管理</a></li>
                     </ul>
                 </li>
                 <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>代金券管理</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="#"> 代金券列表</a></li>
-                        <li><a href="#"> 新增代金券</a></li>
+                        <li><a href="?p=Admin&c=Codes&a=lists"> 代金券列表</a></li>
+                        <li><a href="?p=Admin&c=Codes&a=add"> 新增代金券</a></li>
                     </ul>
                 </li>
-                <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>预约管理</span></a>
+                <li class="menu-list"><a href="index.php?p=Admin&c=Order&a=lists"><i class="fa fa-book"></i> <span>预约管理</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="#"> 预约列表</a></li>
-                        <li><a href="#"> 新增预约</a></li>
+                        <li><a href="index.php?p=Admin&c=Order&a=lists"> 预约列表</a></li>
                     </ul>
                 </li>
                 <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>订单管理</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="#"> 订单列表</a></li>
-                        <li><a href="#"> 新增订单</a></li>
+                        <li><a href="index.php?p=Admin&c=Indent&a=lists"> 订单列表</a></li>
+
                     </ul>
                 </li>
                 <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>积分商城</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="#"> 商城列表</a></li>
-                        <li><a href="#"> 新增商品</a></li>
+                        <li><a href="?p=Admin&c=MarkChangeShop&a=lists"> 商城列表</a></li>
+                        <li><a href="?p=Admin&c=MarkChangeShop&a=add"> 新增商品</a></li>
                     </ul>
                 </li>
                 <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>美发套餐管理</span></a>
@@ -82,17 +82,17 @@
                         <li><a href="index.php?p=Admin&c=Plans&a=add"> 新增套餐</a></li>
                     </ul>
                 </li>
-                <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>活动管理</span></a>
+                <li class="menu-list"><a href="index.php?p=Admin&c=Article&a=lists"><i class="fa fa-book"></i> <span>活动管理</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="#"> 活动列表</a></li>
-                        <li><a href="#"> 新增活动</a></li>
-                        <li><a href="#"> 充值赠送规则</a></li>
+                        <li><a href="index.php?p=Admin&c=Article&a=lists"> 活动列表</a></li>
+                        <li><a href="index.php?p=Admin&c=Article&a=add"> 新增活动</a></li>
+                        <li><a href="index.php?p=Admin&c=Czgz&a=lists"> 充值赠送规则</a></li>
                     </ul>
                 </li>
                 <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>会员管理</span></a>
                     <ul class="sub-menu-list">
-                        <li><a href="#"> 会员列表</a></li>
-                        <li><a href="#"> 新增会员</a></li>
+                        <li><a href="?p=Admin&c=Users&a=lists"> 会员列表</a></li>
+                        <li><a href="?p=Admin&c=Users&a=add"> 新增会员</a></li>
 
                     </ul>
                 </li>
@@ -114,8 +114,9 @@
             <!--toggle button end-->
 
             <!--search start-->
-            <form class="searchform" action="index.html" method="post">
+            <form class="searchform" action="" method="post">
                 <input type="text" class="form-control" name="keyword" placeholder="搜索" />
+                <input type="submit" class="btn btn-success btn-link" id="search_submit" value="提交"/>
             </form>
             <!--search end-->
 
@@ -124,14 +125,14 @@
                 <ul class="notification-menu">
                     <li>
                         <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                            <img src="./Public/Admin/images/photos/user-avatar.png" alt="" />
-                            用户名
+                            欢迎
+                            <?php  @session_start();
+                                    echo   $_SESSION['USER_INFO']['username'];
+?>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-                            <li><a href="#"><i class="fa fa-user"></i>  个人资料</a></li>
-                            <li><a href="#"><i class="fa fa-cog"></i>  修改密码</a></li>
-                            <li><a href="#"><i class="fa fa-sign-out"></i> 退出</a></li>
+                            <li><a href="index.php?p=Admin&c=Login&a=logout"><i class="fa fa-sign-out"></i> 退出</a></li>
                         </ul>
                     </li>
 

@@ -118,7 +118,10 @@ hr {
 .form-signin .form-control:focus {
     z-index: 2;
 }
-
+.form-control{
+    width:30%;
+    overflow: hidden;
+}
 .form-signin input[type="text"], .form-signin input[type="password"] {
     margin-bottom: 15px;
     border-radius: 5px;
@@ -2293,7 +2296,9 @@ ul.user-states li {
 .adv-table .dataTables_length, .adv-table .dataTables_filter {
     padding: 15px 0;
 }
-
+.adv-table th,.adv-table td{
+    text-align: center;
+}
 .cke_chrome {
     border: none !important;
 }
@@ -4706,3 +4711,74 @@ ol.comment-list {
     border-radius: 5px;
     -webkit-border-radius: 5px;
 }
+
+#dynamic-table tr td{
+    line-height:100px;
+}
+#search_submit,#addMembers{
+    background: #E3E4E8;
+    border-radius: 3px;
+    width:60px;
+    -webkit-border-radius: 3px;
+    color: #858582;
+    float: left;
+    margin-left: 3px;
+    padding: 10px;
+    text-decoration: none;
+}
+#addMembers:hover,#search_submit:hover{
+    background: #65cea7;
+    color: #fff;
+}
+.form_group label{
+    font-weight: bold;
+}
+.panel-body{
+    position:relative;
+}
+#memberFace,#UserFace,#ProductFace{
+    position: absolute;
+    width:270px;
+    height:340px;
+    top:100px;
+    left:520px;
+    border-radius: 10px;
+    border:5px solid white;
+    background:#F8FFF8;
+    text-align: center;
+    padding-top: 10px;
+    box-shadow: 0 0 2px pink;
+    font-size:28px;
+    color:white;
+transition:3s;
+text-shadow:-1px -1px 1px red,1px 1px 1px red;
+}
+#memberFace:hover,#UserFace:hover,#ProductFace:hover{
+    transform: rotate(360deg);
+}
+#mbFace,#urFace,#pdFace{
+    width:95%;
+    height:95%;
+    border-radius:5px;
+}
+#fig,#pig{
+    font-family: '楷体';
+}
+.form-group input{
+    border:1px solid #E5E5E5;
+    background:#F4FBFB;
+    color:#000;
+    letter-spacing: 1px;
+}
+.form-group label{
+    color:#006ACD;
+    font-family: Microsoft Yahei;
+    letter-spacing: 2px;
+}
+.panel{
+   background:#EAF8F9;
+}
+.editcc th,.editcc td{
+    text-align:center;
+}
+

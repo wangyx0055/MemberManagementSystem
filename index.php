@@ -33,6 +33,10 @@ defined("CURRENT_VIEW_PATH") or define("CURRENT_VIEW_PATH", VIEW_PATH . $p . DS 
 //2.引入控制器类，创建控制器对象
 //require CURRENT_CONTROLLER_PATH."{$c}Controller.class.php";
 $class_name = $c . 'Controller';
+
+define('ACTION_NAME',$a);
+define('CONTROLLER_NAME',$c);
+define('PLATFORM_NAME',$p);
 $controller = new $class_name();
 
 //3.调用控制器对象上的方法

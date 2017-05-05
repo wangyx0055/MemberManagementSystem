@@ -1,0 +1,56 @@
+<?php
+include ('./header.html');
+?>
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            部门列表
+                            <span class="tools pull-right">
+                                <a href="?p=Admin&c=Group&a=add" class="btn btn-success btn-link">新增</a>
+                            </span>
+                        </header>
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <table  class="display table table-bordered table-striped" id="dynamic-table">
+                                    <thead>
+                                    <tr>
+                                        <th>部门ID</th>
+                                        <th>部门名</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach($rows as $list):?>
+                                    <tr>
+                                        <td><?php echo $list['group_id'];?></td>
+                                        <td><?php echo $list['name'];?></td>
+                                        <td class="hidden-phone">
+                                            <a href="?p=Admin&c=Group&a=edit&id=<?php echo $list['group_id'];?>">修改</a>|<a href="?p=Admin&c=Group&a=delete&id=<?php echo $list['group_id'];?>" onclick="confirm('确认删除？')">删除</a></td>
+                                    </tr>
+                                    <?php endForeach;?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- main content end-->
+</section>
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="./Public/Admin/js/jquery-1.10.2.min.js"></script>
+<script src="./Public/Admin/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="./Public/Admin/js/bootstrap.min.js"></script>
+<script src="./Public/Admin/js/jquery.nicescroll.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="./Public/Admin/js/scripts.js"></script>
+
+</body>
+</html>
